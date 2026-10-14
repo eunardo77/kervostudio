@@ -6,6 +6,9 @@
   <meta name="theme-color" content="#050505">
   <meta name="description" content="KERVØ Studio — desenvolvimento web, edição de fotos, identidade visual e artes para redes sociais. Sua visão. Sua identidade. Sua assinatura.">
   <title>KERVØ Studio — Sua visão. Sua identidade.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{--black:#050505;--panel:#0d0d0c;--gold:#d4af73;--gold2:#f1d29a;--white:#f0eee8;--muted:#aaa69e;--line:rgba(212,175,115,.22)}
     *{box-sizing:border-box}
@@ -85,7 +88,7 @@
     label{font-size:.72rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
     input,textarea,select{display:block;width:100%;margin-top:7px;background:#0c0c0b;border:1px solid #34312b;color:var(--white);padding:13px 14px;outline:none;border-radius:0}
     input:focus,textarea:focus,select:focus{border-color:var(--gold)}
-    textarea{min-height:120px;resize:vertical}
+    textarea{min-height:120px;resize:vertical}\n    button:disabled{opacity:.65;cursor:wait}\n    #formStatus{min-height:1.2em;color:var(--gold)}
     .form-note{color:var(--muted);font-size:.75rem;margin:0}
     footer{padding:28px 0}
     .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
@@ -93,6 +96,38 @@
     .socials{display:flex;gap:16px;color:var(--gold)}
     @media(max-width:850px){.navlinks{gap:14px;font-size:.65rem}.services{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.hero{min-height:590px}}
     @media(max-width:600px){.wrap{width:min(100% - 30px,1160px)}nav{min-height:68px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#080808;padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.hero-content{padding:75px 0 100px}.hero{min-height:560px}h1{font-size:3.5rem}.hero-note{display:none}section{padding:70px 0}.values{grid-template-columns:1fr;gap:14px}.value{padding-bottom:10px}.services,.portfolio-grid,.process-grid{grid-template-columns:1fr}.project{min-height:240px}.field-row{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-direction:column}.manifesto{padding:26px}}
+
+    /* KERVØ Studio — refinamento tipográfico e formas mais suaves */
+    body{font-family:'DM Sans',Inter,Arial,sans-serif;letter-spacing:-.012em}
+    h1,h2,h3{letter-spacing:-.035em}
+    h1{font-weight:400;letter-spacing:-.055em;line-height:.98}
+    h1 strong{font-weight:600}
+    .logo{letter-spacing:.09em}
+    .navlinks{letter-spacing:.075em;gap:24px}
+    .eyebrow{letter-spacing:.22em}
+    .btn{border-radius:999px;padding:14px 23px;letter-spacing:.035em;text-transform:none}
+    .btn.primary{box-shadow:0 5px 20px rgba(212,175,115,.08)}
+    .manifesto{border-radius:26px;padding:38px;overflow:hidden}
+    .services{gap:18px}
+    .service{border-radius:22px;padding:29px 24px;overflow:hidden}
+    .service h3{letter-spacing:-.025em}
+    .project{border-radius:22px}
+    .project-art{border-radius:inherit}
+    input,textarea,select{border-radius:14px;padding:14px 16px;transition:border-color .2s,box-shadow .2s}
+    textarea{border-radius:16px}
+    .menu-btn{border-radius:999px;padding:9px 15px}
+    .value{border-left:0;border-top:1px solid var(--line);padding:15px 0 0}
+    .step{border-top:1px solid rgba(212,175,115,.55);padding-top:20px}
+    .service,.project,.manifesto,.btn{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+    .service:hover,.project:hover{box-shadow:0 16px 42px rgba(0,0,0,.28)}
+    input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,115,.10)}
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+    @media(max-width:600px){
+      .navlinks{border-radius:0 0 20px 20px}
+      .manifesto{padding:27px}
+      .btn{padding:13px 19px}
+      h1{letter-spacing:-.045em}
+    }
   </style>
 </head>
 <body>
@@ -111,7 +146,7 @@
     <section class="hero" id="inicio">
       <div class="wrap hero-content">
         <div class="eyebrow">Estúdio digital independente</div>
-        <h1>IDEIAS QUE<br><strong>GANHAM</strong><br>FORMA.</h1>
+        <h1>Ideias que<br><strong>ganham</strong><br>forma.</h1>
         <p>Desenvolvimento web, edição de fotos e design visual para marcas que querem se destacar com personalidade e intenção.</p>
         <div class="actions">
           <a class="btn primary" href="#contato">Solicite seu projeto <span>↗</span></a>
@@ -200,7 +235,10 @@
           </label>
           <label>Conte sobre seu projeto<textarea name="mensagem" required placeholder="O que você tem em mente?"></textarea></label>
           <button class="btn primary" type="submit">Preparar mensagem ↗</button>
-          <p class="form-note">Ao enviar, seu aplicativo de e-mail será aberto com a mensagem preparada. Nenhum dado é armazenado por este site.</p>
+          <p class="form-note">Sua solicitação será enviada para o e-mail da KERVØ Studio.</p>
+          <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
+          <input type="hidden" name="_subject" value="Novo pedido de orçamento — KERVØ Studio">
+          <input type="hidden" name="_template" value="table">
         </form>
       </div>
     </section>
@@ -219,13 +257,40 @@
     menuBtn.addEventListener('click',()=>navlinks.classList.toggle('open'));
     navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
     document.getElementById('year').textContent=new Date().getFullYear();
-    document.getElementById('contactForm').addEventListener('submit',function(e){
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const data=new FormData(this);
-      const subject=encodeURIComponent('Orçamento — KERVØ Studio | '+data.get('servico'));
-      const body=encodeURIComponent('Olá, KERVØ Studio!\\n\\nMeu nome: '+data.get('nome')+'\\nMeu contato: '+data.get('contato')+'\\nServiço: '+data.get('servico')+'\\n\\nSobre meu projeto:\\n'+data.get('mensagem')+'\\n');
-      // Configure seu e-mail comercial substituindo o endereço abaixo.
-      window.location.href='mailto:SEUEMAIL@EXEMPLO.COM?subject='+subject+'&body='+body;
+
+      const form = this;
+      const status = document.getElementById('formStatus');
+      const button = form.querySelector('button[type="submit"]');
+      const originalButtonText = button.textContent;
+
+      status.textContent = 'Enviando sua solicitação...';
+      button.disabled = true;
+      button.textContent = 'Enviando...';
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/studiokervo@gmail.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || result.success !== 'true' && result.success !== true) {
+          throw new Error(result.message || 'Não foi possível enviar agora.');
+        }
+
+        status.textContent = 'Mensagem enviada! A KERVØ Studio recebeu sua solicitação.';
+        form.reset();
+      } catch (error) {
+        status.textContent = 'Não foi possível enviar. Tente novamente em alguns minutos ou entre em contato por e-mail.';
+        console.error('Erro ao enviar formulário:', error);
+      } finally {
+        button.disabled = false;
+        button.textContent = originalButtonText;
+      }
     });
   </script>
 </body>
