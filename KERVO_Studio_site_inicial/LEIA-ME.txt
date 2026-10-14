@@ -1,0 +1,14 @@
+KERVØ Studio — primeira versão do site
+
+COMO TESTAR
+1. Extraia o arquivo ZIP.
+2. Abra index.html no navegador para visualizar localmente.
+
+ANTES DE PUBLICAR
+1. No final do index.html, procure SEUEMAIL@EXEMPLO.COM e troque pelo seu e-mail comercial.
+2. Troque os conceitos demonstrativos da seção Portfólio por trabalhos reais quando tiver.
+3. Atualize os links de redes sociais e adicione seu WhatsApp/Instagram real.
+4. A imagem de capa usa uma imagem externa do Unsplash; para funcionar offline, baixe uma imagem licenciada e ajuste o CSS.
+
+PUBLICAÇÃO GRATUITA
+Você pode publicar a pasta em GitHub Pages ou Netlify. O domínio gratuito será um subdomínio da plataforma; domínio próprio costuma ser pago.
