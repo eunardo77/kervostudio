@@ -4,293 +4,159 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050505">
-  <meta name="description" content="KERVØ Studio — desenvolvimento web, edição de fotos, identidade visual e artes para redes sociais. Sua visão. Sua identidade. Sua assinatura.">
-  <title>KERVØ Studio — Sua visão. Sua identidade.</title>
+  <meta name="description" content="KERVØ Studio — desenvolvimento web, identidade visual, edição de fotos e design para redes sociais. Sua visão. Sua identidade. Sua assinatura.">
+  <meta property="og:title" content="KERVØ Studio — Ideias que ganham forma">
+  <meta property="og:description" content="Design com intenção. Experiências digitais com personalidade.">
+  <meta property="og:type" content="website">
+  <title>KERVØ Studio — Ideias que ganham forma</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--black:#050505;--panel:#0d0d0c;--gold:#d4af73;--gold2:#f1d29a;--white:#f0eee8;--muted:#aaa69e;--line:rgba(212,175,115,.22)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--black);color:var(--white);font-family:Inter,Montserrat,Arial,sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    button,input,textarea,select{font:inherit}
-    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
-    .topline{height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-    header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
-    nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}
-    .logo{font-size:1.8rem;letter-spacing:.13em;font-weight:800;color:var(--gold);line-height:1}
-    .logo span{display:block;font-size:.55rem;letter-spacing:.62em;text-align:center;margin-top:8px;color:var(--white);font-weight:500}
-    .navlinks{display:flex;align-items:center;gap:26px;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:#d5d1c9}
-    .navlinks a:hover,.navlinks a.active{color:var(--gold)}
-    .menu-btn{display:none;background:none;color:var(--gold);border:1px solid var(--line);padding:8px 12px}
-    .hero{position:relative;min-height:650px;display:grid;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
-    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 45%,rgba(166,111,38,.22),transparent 37%),linear-gradient(110deg,#050505 25%,rgba(5,5,5,.84) 55%,rgba(5,5,5,.45)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85') center/cover;opacity:.72}
-    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050505,transparent 35%,rgba(0,0,0,.2))}
-    .hero-content{position:relative;z-index:1;padding:90px 0 110px;max-width:760px}
-    .eyebrow{color:var(--gold);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase}
-    h1{font-size:clamp(3.3rem,8vw,7.3rem);line-height:.94;letter-spacing:.04em;margin:25px 0 24px;font-weight:500}
-    h1 strong{color:var(--gold);font-weight:600}
-    .hero p{max-width:530px;color:#d0ccc4;font-size:1.05rem}
-    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 21px;border:1px solid var(--gold);color:var(--gold);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;transition:.2s;background:transparent;cursor:pointer}
-    .btn.primary{background:var(--gold);color:#090806;font-weight:700}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px #d4af7324}
-    .hero-note{position:absolute;right:0;bottom:34px;z-index:2;color:var(--gold);font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;writing-mode:vertical-rl}
-    section{padding:96px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
-    .section-head h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:500;line-height:1.08;margin:12px 0 0;letter-spacing:.02em}
-    .section-head p{max-width:420px;color:var(--muted);margin:0}
-    .gold-line{width:54px;height:2px;background:var(--gold);margin-top:20px}
-    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
-    .about-copy{font-size:1.1rem;color:#c7c3bc;max-width:600px}
-    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
-    .value{border-left:1px solid var(--line);padding-left:18px}
-    .value b{color:var(--gold);font-size:1.25rem;letter-spacing:.1em}
-    .value span{display:block;color:var(--muted);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:5px}
-    .manifesto{border:1px solid var(--line);padding:35px;background:linear-gradient(135deg,#14120e,#080808);position:relative}
-    .manifesto:before{content:"KØ";position:absolute;right:20px;top:0;color:rgba(212,175,115,.08);font-size:9rem;font-weight:800;line-height:1}
-    .manifesto h3{position:relative;font-size:1.5rem;font-weight:500;max-width:290px}
-    .manifesto p{position:relative;color:var(--muted)}
-    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .service{background:linear-gradient(145deg,#11110f,#080808);border:1px solid rgba(212,175,115,.18);padding:27px 23px;min-height:245px;transition:.25s}
-    .service:hover{border-color:var(--gold);transform:translateY(-5px)}
-    .service .num{color:var(--gold);font-size:.72rem;letter-spacing:.2em}
-    .service .symbol{font-size:1.8rem;color:var(--gold);margin:24px 0 12px}
-    .service h3{font-size:1.03rem;letter-spacing:.04em;font-weight:500;margin:0 0 10px}
-    .service p{color:var(--muted);font-size:.87rem;margin:0}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .project{min-height:270px;border:1px solid var(--line);position:relative;overflow:hidden;background:#111}
-    .project-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;transition:transform .4s}
-    .project:hover .project-art{transform:scale(1.05)}
-    .project-art.one{background:radial-gradient(circle at 70% 20%,#76552d,transparent 38%),linear-gradient(135deg,#17120b,#050505)}
-    .project-art.two{background:radial-gradient(circle at 25% 20%,#77736a,transparent 30%),linear-gradient(145deg,#26231e,#060606)}
-    .project-art.three{background:radial-gradient(circle at 70% 70%,#51391e,transparent 35%),linear-gradient(135deg,#0d0d0d,#24180c)}
-    .project-art strong{font-size:clamp(1.7rem,3vw,2.7rem);letter-spacing:.14em;color:var(--gold);font-weight:600}
-    .project-art small{display:block;letter-spacing:.35em;font-size:.6rem;color:#eee;margin-top:10px}
-    .project-info{position:absolute;bottom:0;left:0;right:0;padding:28px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,.95))}
-    .project-info span{font-size:.68rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase}
-    .project-info h3{margin:4px 0 0;font-size:1rem;font-weight:500}
-    .portfolio-note{color:var(--muted);font-size:.82rem;margin-top:20px}
-    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-    .step{border-top:1px solid var(--gold);padding-top:18px}
-    .step .number{color:var(--gold);font-size:.7rem;letter-spacing:.2em}
-    .step h3{font-size:1.2rem;font-weight:500}
-    .step p{color:var(--muted);font-size:.9rem}
-    .contact{background:radial-gradient(ellipse at 80% 30%,rgba(130,88,35,.15),transparent 35%)}
-    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px}
-    .contact-copy h2{font-size:clamp(2.4rem,5vw,4.4rem);line-height:1;margin:18px 0}
-    .contact-copy p{color:var(--muted);max-width:390px}
-    .contact-details{margin-top:30px;color:var(--gold);font-size:.83rem;letter-spacing:.08em}
-    form{display:grid;gap:14px}
-    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    label{font-size:.72rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
-    input,textarea,select{display:block;width:100%;margin-top:7px;background:#0c0c0b;border:1px solid #34312b;color:var(--white);padding:13px 14px;outline:none;border-radius:0}
-    input:focus,textarea:focus,select:focus{border-color:var(--gold)}
-    textarea{min-height:120px;resize:vertical}\n    button:disabled{opacity:.65;cursor:wait}\n    #formStatus{min-height:1.2em;color:var(--gold)}
-    .form-note{color:var(--muted);font-size:.75rem;margin:0}
-    footer{padding:28px 0}
-    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
-    .footer-logo{color:var(--gold);font-size:1rem;letter-spacing:.2em}
-    .socials{display:flex;gap:16px;color:var(--gold)}
-    @media(max-width:850px){.navlinks{gap:14px;font-size:.65rem}.services{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.hero{min-height:590px}}
-    @media(max-width:600px){.wrap{width:min(100% - 30px,1160px)}nav{min-height:68px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#080808;padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.hero-content{padding:75px 0 100px}.hero{min-height:560px}h1{font-size:3.5rem}.hero-note{display:none}section{padding:70px 0}.values{grid-template-columns:1fr;gap:14px}.value{padding-bottom:10px}.services,.portfolio-grid,.process-grid{grid-template-columns:1fr}.project{min-height:240px}.field-row{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-direction:column}.manifesto{padding:26px}}
-
-    /* KERVØ Studio — refinamento tipográfico e formas mais suaves */
-    body{font-family:'DM Sans',Inter,Arial,sans-serif;letter-spacing:-.012em}
-    h1,h2,h3{letter-spacing:-.035em}
-    h1{font-weight:400;letter-spacing:-.055em;line-height:.98}
-    h1 strong{font-weight:600}
-    .logo{letter-spacing:.09em}
-    .navlinks{letter-spacing:.075em;gap:24px}
-    .eyebrow{letter-spacing:.22em}
-    .btn{border-radius:999px;padding:14px 23px;letter-spacing:.035em;text-transform:none}
-    .btn.primary{box-shadow:0 5px 20px rgba(212,175,115,.08)}
-    .manifesto{border-radius:26px;padding:38px;overflow:hidden}
-    .services{gap:18px}
-    .service{border-radius:22px;padding:29px 24px;overflow:hidden}
-    .service h3{letter-spacing:-.025em}
-    .project{border-radius:22px}
-    .project-art{border-radius:inherit}
-    input,textarea,select{border-radius:14px;padding:14px 16px;transition:border-color .2s,box-shadow .2s}
-    textarea{border-radius:16px}
-    .menu-btn{border-radius:999px;padding:9px 15px}
-    .value{border-left:0;border-top:1px solid var(--line);padding:15px 0 0}
-    .step{border-top:1px solid rgba(212,175,115,.55);padding-top:20px}
-    .service,.project,.manifesto,.btn{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
-    .service:hover,.project:hover{box-shadow:0 16px 42px rgba(0,0,0,.28)}
-    input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,115,.10)}
-    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
-    @media(max-width:600px){
-      .navlinks{border-radius:0 0 20px 20px}
-      .manifesto{padding:27px}
-      .btn{padding:13px 19px}
-      h1{letter-spacing:-.045em}
-    }
+    :root{--black:#050505;--panel:#0b0b0a;--gold:#d4af73;--gold-bright:#f0c982;--white:#f2f0ea;--muted:#aaa69e;--line:rgba(212,175,115,.27);--content:1240px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;line-height:1.6;letter-spacing:-.01em}body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}img{display:block;max-width:100%}.wrap{width:min(var(--content),calc(100% - 48px));margin-inline:auto}.gold{color:var(--gold)}.eyebrow{font-size:.67rem;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);font-weight:600}.topline{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    header{position:sticky;top:0;z-index:30;background:rgba(5,5,5,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(212,175,115,.16)}nav{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:78px}.logo{font-family:Manrope,sans-serif;color:var(--gold);font-size:1.65rem;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap}.logo span{display:block;text-align:center;font-size:.48rem;letter-spacing:.7em;color:var(--white);font-weight:500;margin-top:7px}.navlinks{display:flex;align-items:center;gap:clamp(14px,2.4vw,32px);font-size:.66rem;text-transform:uppercase;letter-spacing:.13em;color:#d4d0c7}.navlinks a{transition:color .2s}.navlinks a:hover,.navlinks a:focus-visible{color:var(--gold)}.nav-cta{border:1px solid var(--gold);padding:11px 17px;color:var(--gold);font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;transition:.2s;white-space:nowrap}.nav-cta:hover{background:var(--gold);color:#080705}.menu-btn{display:none;background:transparent;border:1px solid var(--line);color:var(--gold);padding:9px 12px;cursor:pointer}
+    .hero{position:relative;isolation:isolate;min-height:min(720px,calc(100svh - 80px));display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=88') center 48%/cover;filter:saturate(.72)}.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.92) 25%,rgba(5,5,5,.55) 55%,rgba(5,5,5,.1) 100%),linear-gradient(0deg,#050505 0%,transparent 27%,rgba(0,0,0,.18) 100%)}.hero-content{padding:100px 0 120px;max-width:700px}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(3.5rem,8.2vw,7.5rem);font-weight:300;line-height:.94;letter-spacing:-.075em;margin:24px 0}.hero h1 strong{font-weight:500;color:var(--gold)}.hero p{max-width:490px;color:#d0ccc4;font-size:1rem}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:47px;padding:13px 20px;border:1px solid var(--gold);color:var(--gold);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;transition:transform .22s,background .22s,color .22s,border-color .22s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--gold);color:#090806;font-weight:700}.btn.primary:hover{background:var(--gold-bright)}.hero-side{position:absolute;right:max(24px,calc((100vw - var(--content))/2));bottom:42px;display:flex;align-items:center;gap:18px;color:var(--gold);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase}.scroll-mark{height:43px;width:16px;border:1px solid var(--gold);border-radius:20px;position:relative}.scroll-mark:after{content:"";position:absolute;top:7px;left:6px;width:2px;height:7px;background:var(--gold);border-radius:2px}
+    section{padding:92px 0;border-bottom:1px solid rgba(212,175,115,.2)}.about-grid{display:grid;grid-template-columns:1fr .88fr 1fr;align-items:stretch;gap:0}.about-copy{padding:16px 34px 16px 0}.section-title{font-family:Manrope,sans-serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.04;letter-spacing:-.055em;font-weight:400;margin:18px 0}.about-copy>p,.manifesto p{font-size:.91rem;color:#bdb9b1;max-width:470px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}.value{border-top:1px solid var(--line);padding-top:14px}.value b{display:block;color:var(--gold);font-size:.72rem;letter-spacing:.14em;margin-bottom:6px}.value span{display:block;color:var(--muted);font-size:.66rem;line-height:1.6}.brand-photo{min-height:320px;position:relative;overflow:hidden;border-inline:1px solid var(--line)}.brand-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.72) saturate(.55)}.brand-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.25),transparent)}.manifesto{padding:24px 0 24px 34px;align-self:center}.manifesto h3{font-family:Manrope,sans-serif;font-size:1.55rem;line-height:1.2;letter-spacing:-.04em;font-weight:400;max-width:330px}.manifesto .signature{font-size:1.15rem;color:var(--gold);letter-spacing:.1em;margin-top:20px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:35px}.section-head h2{font-family:Manrope,sans-serif;font-size:clamp(2rem,4.4vw,3.6rem);font-weight:400;line-height:1.03;letter-spacing:-.06em;margin:14px 0 0}.section-head>p{max-width:390px;color:var(--muted);font-size:.88rem;margin:0 0 3px}.services{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.service{min-height:235px;padding:23px 21px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(22,20,16,.8),rgba(7,7,7,.8));transition:transform .25s,border-color .25s,background .25s}.service:hover{transform:translateY(-5px);border-color:var(--gold);background:linear-gradient(145deg,#17130c,#080808)}.service-top{display:flex;align-items:center;justify-content:space-between;color:var(--gold);font-size:.66rem;letter-spacing:.17em}.service-icon{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:1.25rem;margin:24px 0 14px}.service h3{font-size:1rem;font-weight:500;margin:0 0 8px}.service p{font-size:.79rem;color:var(--muted);margin:0 0 18px}.text-link{font-size:.64rem;color:var(--gold);text-transform:uppercase;letter-spacing:.12em}.text-link span{display:inline-block;margin-left:7px;transition:transform .2s}.text-link:hover span{transform:translateX(4px)}
+    .portfolio{background:linear-gradient(180deg,#080807,#050505)}.portfolio-layout{display:grid;grid-template-columns:.72fr 1.8fr;gap:45px;align-items:center}.portfolio-intro p{font-size:.85rem;color:var(--muted);max-width:300px}.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.project{position:relative;min-height:230px;overflow:hidden;border:1px solid var(--line);background:#111}.project img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.72) saturate(.7);transition:transform .5s,filter .5s}.project:hover img{transform:scale(1.045);filter:brightness(.9) saturate(.85)}.project:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.94),transparent 72%)}.project-caption{position:absolute;z-index:1;bottom:0;left:0;right:0;padding:19px}.project-caption span{font-size:.58rem;color:var(--gold);text-transform:uppercase;letter-spacing:.15em}.project-caption h3{margin:4px 0 0;font-weight:500;font-size:.98rem}.project-caption p{margin:3px 0 0;font-size:.7rem;color:#c1bdb5}.concept-note{grid-column:1/-1;color:#827d73;font-size:.68rem;margin:2px 0 0}
+    .process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:45px}.step{border-top:1px solid var(--gold);padding-top:18px}.step .number{font-size:.62rem;letter-spacing:.18em;color:var(--gold)}.step h3{font-size:1rem;font-weight:500;margin:13px 0 8px}.step p{font-size:.77rem;color:var(--muted);margin:0}.step-icon{color:var(--gold);font-size:1.25rem;margin-top:17px}
+    .manifesto-band{padding:58px 0;background:linear-gradient(100deg,#12100b,#070707 60%);border-bottom:1px solid var(--line);text-align:center}.manifesto-band p{font-family:Manrope,sans-serif;font-weight:300;font-size:clamp(1.6rem,3.5vw,2.7rem);line-height:1.25;letter-spacing:-.045em;max-width:850px;margin:15px auto}.manifesto-band small{color:var(--muted);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase}
+    .contact{background:radial-gradient(ellipse at 8% 40%,rgba(145,99,37,.12),transparent 40%)}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.contact-copy h2{font-family:Manrope,sans-serif;font-size:clamp(2.7rem,5.4vw,5rem);font-weight:300;line-height:.98;letter-spacing:-.07em;margin:20px 0}.contact-copy>p{max-width:400px;color:var(--muted);font-size:.9rem}.contact-detail{display:flex;align-items:center;gap:12px;margin-top:18px;color:#d3cec4;font-size:.82rem}.contact-detail b{color:var(--gold);font-weight:500}.contact-form{display:grid;gap:14px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label,.contact-form>label{display:block;color:var(--gold);font-size:.65rem;text-transform:uppercase;letter-spacing:.12em}.field input,.field select,.field textarea,.contact-form>label textarea{display:block;width:100%;margin-top:8px;padding:14px 15px;background:#0b0b0a;border:1px solid #39352d;border-radius:0;color:var(--white);outline:none;transition:border-color .2s,box-shadow .2s;font-size:.84rem;letter-spacing:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,115,.09)}input::placeholder,textarea::placeholder{color:#77736c}.field textarea{min-height:130px;resize:vertical}.form-bottom{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.form-note,#formStatus{font-size:.7rem;color:var(--muted);margin:0}#formStatus{color:var(--gold);min-height:1.2em}.contact-form button:disabled{opacity:.6;cursor:wait}
+    footer{padding:26px 0 30px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.footer-center{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center}.socials{display:flex;gap:16px;color:var(--gold);font-size:.8rem}.copyright{border-top:1px solid rgba(255,255,255,.08);margin-top:22px;padding-top:17px;color:#77736c;font-size:.63rem;display:flex;justify-content:space-between;gap:15px}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}a:focus-visible,button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:4px}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    @media(max-width:980px){.navlinks{gap:14px}.navlinks a{font-size:.6rem}.nav-cta{display:none}.about-grid{grid-template-columns:1fr 1fr}.brand-photo{grid-column:2;grid-row:1/3}.manifesto{padding:25px 0 0}.services{grid-template-columns:repeat(2,1fr)}.portfolio-layout{grid-template-columns:1fr;gap:25px}.portfolio-intro{display:flex;align-items:end;justify-content:space-between;gap:25px}.portfolio-intro p{max-width:330px}.process-grid{grid-template-columns:repeat(3,1fr);row-gap:28px}.contact-grid{gap:35px}}
+    @media(max-width:700px){.wrap{width:calc(100% - 34px)}nav{min-height:68px}.logo{font-size:1.4rem}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(5,5,5,.98);padding:20px 24px 25px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line);gap:20px}.navlinks.open{display:flex}.navlinks a{font-size:.72rem}.hero{min-height:640px;min-height:calc(88svh - 65px)}.hero:before{background-position:58% center}.hero:after{background:linear-gradient(90deg,rgba(5,5,5,.93),rgba(5,5,5,.56)),linear-gradient(0deg,#050505 0%,transparent 55%)}.hero-content{padding:80px 0 110px}.hero h1{font-size:clamp(3.4rem,15vw,5.5rem)}.hero p{font-size:.92rem;max-width:390px}.hero-side{right:18px;bottom:22px;font-size:.48rem}section{padding:68px 0}.about-grid{grid-template-columns:1fr}.about-copy{padding:0 0 28px}.brand-photo{grid-column:auto;grid-row:auto;min-height:260px;border:1px solid var(--line)}.manifesto{padding:28px 0 0}.section-head{align-items:flex-start;flex-direction:column;gap:18px}.section-head>p{max-width:500px}.services{grid-template-columns:1fr 1fr;gap:10px}.service{padding:18px 15px;min-height:230px}.service-icon{margin:20px 0 12px}.service h3{font-size:.9rem}.service p{font-size:.75rem}.portfolio-intro{display:block}.portfolio-intro p{margin-top:15px}.portfolio-grid{gap:10px}.project{min-height:210px}.project-caption{padding:13px}.project-caption h3{font-size:.85rem}.process-grid{grid-template-columns:1fr 1fr;gap:24px 18px}.contact-grid{grid-template-columns:1fr;gap:30px}.contact-copy h2{font-size:clamp(3rem,13vw,4.5rem)}.field-row{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-wrap:wrap}.footer-center{text-align:left;order:3;width:100%}.copyright{flex-direction:column;gap:5px}}
+    @media(max-width:390px){.services{grid-template-columns:1fr}.service{min-height:0}.portfolio-grid{grid-template-columns:1fr}.project{min-height:235px}.values{gap:9px}.value span{font-size:.61rem}.actions .btn{width:100%}}
+    /* Refinamento arredondado — KERVØ Studio */
+    :root{--radius-xl:30px;--radius-lg:22px;--radius-md:16px}
+    header{background:rgba(5,5,5,.82);border-bottom:0;padding:10px 0 0}
+    header nav.wrap{width:min(var(--content),calc(100% - 68px));min-height:66px;padding:0 26px;border:1px solid var(--line);border-radius:999px;background:rgba(10,10,9,.9);box-shadow:0 10px 40px rgba(0,0,0,.2)}
+    .nav-cta{border-radius:999px;padding:11px 19px}
+    .menu-btn{border-radius:999px}
+    .hero{width:min(1320px,calc(100% - 68px));margin:0 auto;border:1px solid var(--line);border-radius:var(--radius-xl);min-height:min(680px,calc(100svh - 90px))}
+    .hero:before{border-radius:inherit}
+    .hero:after{border-radius:inherit}
+    section{width:min(1320px,calc(100% - 68px));margin:12px auto;padding:58px 0;border:1px solid var(--line);border-radius:var(--radius-xl);overflow:hidden;background:linear-gradient(145deg,rgba(17,17,15,.72),rgba(5,5,5,.92))}
+    .about-grid{padding:0 34px}
+    .brand-photo{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
+    .manifesto{padding:24px 24px 24px 30px;margin-left:16px;border:1px solid rgba(212,175,115,.16);border-radius:var(--radius-lg);background:rgba(0,0,0,.2)}
+    .service{border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(145deg,#121210,#080808);transition:transform .25s,border-color .25s,box-shadow .25s}
+    .service:hover{transform:translateY(-4px);border-color:rgba(240,201,130,.7);box-shadow:0 18px 42px rgba(0,0,0,.28)}
+    .service-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%}
+    .project{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line)}
+    .project img{transition:transform .5s}
+    .project:hover img{transform:scale(1.04)}
+    .step{border:1px solid rgba(212,175,115,.2);border-radius:var(--radius-md);padding:20px;background:rgba(255,255,255,.015)}
+    .manifesto-band{width:min(1320px,calc(100% - 68px));margin:12px auto;border:1px solid var(--line);border-radius:var(--radius-xl);overflow:hidden}
+    .contact-form{padding:26px;border:1px solid rgba(212,175,115,.2);border-radius:var(--radius-lg);background:rgba(255,255,255,.018)}
+    input,textarea,select{border-radius:var(--radius-md)}
+    .btn{border-radius:999px}
+    .btn.primary{box-shadow:0 7px 24px rgba(212,175,115,.12)}
+    footer{padding:24px 0 30px}
+    .footer-inner{padding:10px 0 24px}
+    @media(max-width:980px){.about-grid{padding:0 24px}.manifesto{margin-left:0}.hero,.manifesto-band,section{width:calc(100% - 40px)}header nav.wrap{width:calc(100% - 40px)}}
+    @media(max-width:700px){header{padding-top:8px}header nav.wrap{width:calc(100% - 24px);padding:0 16px;border-radius:22px;min-height:62px}.navlinks{top:70px;left:12px;right:12px;border:1px solid var(--line);border-radius:20px;background:rgba(8,8,8,.98)}.hero{width:calc(100% - 24px);border-radius:24px;min-height:calc(86svh - 60px)}section{width:calc(100% - 24px);margin:10px auto;padding:42px 0;border-radius:24px}.about-grid{padding:0 18px}.brand-photo{border-radius:18px}.manifesto{padding:22px;margin-top:16px;border-radius:18px}.services{gap:12px}.service{border-radius:18px}.project{border-radius:16px}.step{border-radius:15px;padding:16px}.manifesto-band{width:calc(100% - 24px);border-radius:22px}.contact-form{padding:18px;border-radius:18px}.actions .btn{width:auto}.hero-side{right:16px}}
+    @media(max-width:390px){.actions .btn{width:100%}.service{border-radius:16px}}
   </style>
 </head>
 <body>
   <div class="topline"></div>
   <header>
-    <nav class="wrap">
-      <a class="logo" href="#inicio" aria-label="KERVØ Studio início">KERVØ<span>STUDIO</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">MENU ☰</button>
+    <nav class="wrap" aria-label="Navegação principal">
+      <a class="logo" href="#inicio" aria-label="KERVØ Studio, início">KERVØ<span>STUDIO</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks" aria-label="Abrir menu">MENU ☰</button>
       <div class="navlinks" id="navlinks">
-        <a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#processo">Processo</a><a href="#contato">Contato</a>
+        <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#processo">Processo</a><a href="#contato">Contato</a>
       </div>
+      <a class="nav-cta" href="#contato">Solicitar orçamento ↗</a>
     </nav>
   </header>
-
   <main>
     <section class="hero" id="inicio">
-      <div class="wrap hero-content">
-        <div class="eyebrow">Estúdio digital independente</div>
-        <h1>Ideias que<br><strong>ganham</strong><br>forma.</h1>
-        <p>Desenvolvimento web, edição de fotos e design visual para marcas que querem se destacar com personalidade e intenção.</p>
-        <div class="actions">
-          <a class="btn primary" href="#contato">Solicite seu projeto <span>↗</span></a>
-          <a class="btn" href="#portfolio">Ver portfólio</a>
-        </div>
+      <div class="wrap hero-content reveal">
+        <div class="eyebrow">Desenvolvimento web · Design · Edição · Social media</div>
+        <h1>Ideias que<br>ganham <strong>forma.</strong></h1>
+        <p>Somos a KERVØ Studio. Unimos criatividade e tecnologia para transformar ideias em experiências visuais e funcionais. Da sua visão ao resultado, cuidamos de cada detalhe.</p>
+        <div class="actions"><a class="btn primary" href="#contato">Solicitar orçamento <span>↗</span></a><a class="btn" href="#portfolio">Ver portfólio</a></div>
       </div>
-      <div class="hero-note">Sua visão · Sua identidade · Sua assinatura</div>
+      <div class="hero-side"><span>Sua visão. Sua identidade. Sua assinatura.</span><span class="scroll-mark" aria-hidden="true"></span></div>
     </section>
-
     <section id="sobre">
       <div class="wrap about-grid">
-        <div>
-          <div class="eyebrow">01 / Conceito da marca</div>
-          <h2 style="font-size:clamp(2.2rem,4vw,3.5rem);font-weight:500;line-height:1.1">Técnica com visão.<br><span style="color:var(--gold)">Design com propósito.</span></h2>
-          <div class="gold-line"></div>
-          <p class="about-copy">A KERVØ Studio une criatividade, precisão e identidade para transformar ideias em experiências visuais e digitais. Cada projeto é pensado para comunicar com clareza, personalidade e impacto.</p>
-          <div class="values">
-            <div class="value"><b>KER</b><span>Estrutura<br>Precisão<br>Construção</span></div>
-            <div class="value"><b>V</b><span>Visão<br>Criatividade<br>Identidade</span></div>
-            <div class="value"><b>Ø</b><span>Originalidade<br>Nova perspectiva<br>Ciclo criativo</span></div>
-          </div>
+        <div class="about-copy reveal">
+          <div class="eyebrow">01 / Sobre a KERVØ</div>
+          <h2 class="section-title">Criatividade,<br>estratégia e<br><span class="gold">resultados.</span></h2>
+          <p>A KERVØ Studio é um estúdio criativo focado em soluções digitais e visuais. Trabalhamos com marcas e pessoas que valorizam qualidade, autenticidade e propósito em cada projeto.</p>
+          <div class="values"><div class="value"><b>ESTRATÉGIA</b><span>Planejamento com foco em resultado.</span></div><div class="value"><b>CRIATIVIDADE</b><span>Ideias que se tornam experiências.</span></div><div class="value"><b>COMPROMISSO</b><span>Do primeiro briefing à entrega final.</span></div></div>
         </div>
-        <div class="manifesto">
-          <div class="eyebrow">Nosso manifesto</div>
-          <h3>Não é só estética. É a forma como sua marca é lembrada.</h3>
-          <p>Do primeiro conceito à entrega final, o objetivo é criar algo que tenha a sua cara e faça sentido para o seu público.</p>
-          <div class="gold-line"></div>
-        </div>
+        <div class="brand-photo reveal"><img src="https://images.unsplash.com/photo-1634942536790-2533b8c3c4e5?auto=format&fit=crop&w=1000&q=85" alt="Cartão de visita preto com acabamento premium" loading="lazy"></div>
+        <div class="manifesto reveal"><div class="eyebrow">Nosso manifesto</div><h3>O digital é mais do que tecnologia. É uma forma de comunicar, conectar e criar novas possibilidades.</h3><p>Acreditamos em projetos que têm alma, em marcas que contam histórias e em um trabalho que deixa legado.</p><div class="signature">KERVØ</div><div class="gold" style="letter-spacing:.45em;font-size:.55rem">S T U D I O</div></div>
       </div>
     </section>
-
     <section id="servicos">
       <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">02 / O que fazemos</div><h2>Serviços pensados<br>para destacar você.</h2><div class="gold-line"></div></div><p>Uma presença visual consistente começa com boas escolhas. Escolha o serviço ideal para o momento da sua marca.</p></div>
+        <div class="section-head reveal"><div><div class="eyebrow">02 / Serviços</div><h2>Soluções completas<br>para a sua marca.</h2></div><p>Cada projeto é único. Por isso, oferecemos serviços sob medida para atender às suas necessidades e objetivos.</p></div>
         <div class="services">
-          <article class="service"><div class="num">01 — DIGITAL</div><div class="symbol">⌘</div><h3>Desenvolvimento de sites</h3><p>Sites responsivos, modernos e alinhados ao seu projeto, com foco em clareza e experiência.</p></article>
-          <article class="service"><div class="num">02 — IMAGEM</div><div class="symbol">◈</div><h3>Edição de fotos</h3><p>Tratamento, ajustes e acabamento visual para valorizar cada imagem.</p></article>
-          <article class="service"><div class="num">03 — IDENTIDADE</div><div class="symbol">✳</div><h3>Identidade visual</h3><p>Direção visual e elementos gráficos para comunicar a personalidade da sua marca.</p></article>
-          <article class="service"><div class="num">04 — SOCIAL</div><div class="symbol">▧</div><h3>Artes para redes sociais</h3><p>Peças visuais consistentes para divulgar, apresentar e fortalecer sua presença online.</p></article>
+          <article class="service reveal"><div class="service-top"><span>01</span><span>DIGITAL</span></div><div class="service-icon" aria-hidden="true">⌘</div><h3>Desenvolvimento web</h3><p>Sites modernos, rápidos e responsivos, do layout ao código.</p><a class="text-link" href="#contato">Saiba mais <span>→</span></a></article>
+          <article class="service reveal"><div class="service-top"><span>02</span><span>IMAGEM</span></div><div class="service-icon" aria-hidden="true">◇</div><h3>Edição de fotos</h3><p>Tratamento profissional para destacar o melhor de cada imagem.</p><a class="text-link" href="#contato">Saiba mais <span>→</span></a></article>
+          <article class="service reveal"><div class="service-top"><span>03</span><span>IDENTIDADE</span></div><div class="service-icon" aria-hidden="true">✳</div><h3>Identidade visual</h3><p>Marcas fortes, autênticas e memoráveis.</p><a class="text-link" href="#contato">Saiba mais <span>→</span></a></article>
+          <article class="service reveal"><div class="service-top"><span>04</span><span>SOCIAL</span></div><div class="service-icon" aria-hidden="true">▧</div><h3>Artes para redes sociais</h3><p>Conteúdo visual que engaja e fortalece sua presença digital.</p><a class="text-link" href="#contato">Saiba mais <span>→</span></a></article>
         </div>
       </div>
     </section>
-
-    <section id="portfolio">
-      <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">03 / Seleção de trabalhos</div><h2>Conceitos que<br>ganham presença.</h2><div class="gold-line"></div></div><p>Uma prévia do estilo visual da KERVØ Studio. Substitua estes conceitos pelos seus trabalhos reais conforme o portfólio crescer.</p></div>
+    <section class="portfolio" id="portfolio">
+      <div class="wrap portfolio-layout">
+        <div class="portfolio-intro reveal"><div><div class="eyebrow">03 / Portfólio</div><h2 class="section-title">Projetos que<br><span class="gold">falam por nós.</span></h2><p>Uma seleção de conceitos que demonstra nossa direção visual, atenção aos detalhes e compromisso com cada projeto.</p><a class="btn" href="#contato">Vamos criar juntos ↗</a></div></div>
         <div class="portfolio-grid">
-          <article class="project"><div class="project-art one"><div><strong>KØ</strong><small>IDENTIDADE VISUAL</small></div></div><div class="project-info"><span>Conceito 01</span><h3>Identidade premium</h3></div></article>
-          <article class="project"><div class="project-art two"><div><strong>FORMA.</strong><small>DIGITAL EXPERIENCE</small></div></div><div class="project-info"><span>Conceito 02</span><h3>Presença digital</h3></div></article>
-          <article class="project"><div class="project-art three"><div><strong>STUDIO 09</strong><small>SOCIAL DESIGN</small></div></div><div class="project-info"><span>Conceito 03</span><h3>Design para redes</h3></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1000&q=85" alt="Estação de trabalho para projeto digital" loading="lazy"><div class="project-caption"><span>Conceito 01 · Identidade visual</span><h3>Terra Nova</h3><p>Direção de marca e aplicações</p></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85" alt="Editorial de moda com iluminação dramática" loading="lazy"><div class="project-caption"><span>Conceito 02 · Editorial</span><h3>Lumière</h3><p>Imagem e linguagem visual</p></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85" alt="Composição de materiais de identidade visual" loading="lazy"><div class="project-caption"><span>Conceito 03 · Design</span><h3>Forma Studio</h3><p>Sistema visual e composição</p></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=85" alt="Retrato editorial para conceito de edição fotográfica" loading="lazy"><div class="project-caption"><span>Conceito 04 · Foto</span><h3>Soul — Ensaio</h3><p>Tratamento e edição de imagem</p></div></article>
+          <p class="concept-note">Imagens e nomes ilustrativos para demonstrar a direção estética. Substitua por projetos autorais ou trabalhos reais autorizados antes de apresentar como portfólio de clientes.</p>
         </div>
-        <p class="portfolio-note">Nota: os itens acima são conceitos demonstrativos, não trabalhos de clientes. Atualize esta seção com projetos autorizados antes de divulgar como portfólio comercial.</p>
       </div>
     </section>
-
     <section id="processo">
-      <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">04 / Como funciona</div><h2>Do briefing à entrega.</h2><div class="gold-line"></div></div><p>Um processo simples e transparente para tirar seu projeto do papel.</p></div>
+      <div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">04 / Como funciona</div><h2>Do briefing à entrega.</h2></div><p>Um processo claro e colaborativo para tirar sua ideia do papel com cuidado em cada etapa.</p></div>
         <div class="process-grid">
-          <article class="step"><div class="number">ETAPA 01</div><h3>Entendemos sua ideia</h3><p>Você conta o que precisa, qual é seu objetivo e quais referências representam sua visão.</p></article>
-          <article class="step"><div class="number">ETAPA 02</div><h3>Criamos a direção</h3><p>Definimos a proposta visual e o escopo antes de avançar para a produção.</p></article>
-          <article class="step"><div class="number">ETAPA 03</div><h3>Refinamos e entregamos</h3><p>Alinhamos os detalhes, finalizamos o projeto e entregamos os arquivos ou a publicação combinada.</p></article>
+          <article class="step reveal"><div class="number">ETAPA 01</div><div class="step-icon">◉</div><h3>Briefing</h3><p>Entendemos suas ideias, objetivos e referências.</p></article>
+          <article class="step reveal"><div class="number">ETAPA 02</div><div class="step-icon">↗</div><h3>Proposta</h3><p>Apresentamos a melhor solução e o cronograma.</p></article>
+          <article class="step reveal"><div class="number">ETAPA 03</div><div class="step-icon">✳</div><h3>Produção</h3><p>Criamos e desenvolvemos com atenção aos detalhes.</p></article>
+          <article class="step reveal"><div class="number">ETAPA 04</div><div class="step-icon">◇</div><h3>Revisão</h3><p>Refinamos o projeto com base no alinhamento combinado.</p></article>
+          <article class="step reveal"><div class="number">ETAPA 05</div><div class="step-icon">↗</div><h3>Entrega</h3><p>Você recebe seu projeto pronto conforme o escopo.</p></article>
         </div>
       </div>
     </section>
-
+    <div class="manifesto-band"><div class="wrap reveal"><div class="eyebrow">KERVØ Studio</div><p>“Não é só estética. É a forma como sua marca <span class="gold">é lembrada.</span>”</p><small>Sua visão · Sua identidade · Sua assinatura</small></div></div>
     <section class="contact" id="contato">
       <div class="wrap contact-grid">
-        <div class="contact-copy">
-          <div class="eyebrow">05 / Vamos conversar</div>
-          <h2>Seu próximo<br>projeto começa<br><span style="color:var(--gold)">aqui.</span></h2>
-          <div class="gold-line"></div>
-          <p>Conte um pouco sobre sua ideia. Vamos entender o que você precisa e conversar sobre os próximos passos.</p>
-          <div class="contact-details">KERVØ STUDIO<br>DESENVOLVIMENTO WEB · DESIGN · PHOTO EDITING</div>
-        </div>
-        <form id="contactForm">
-          <div class="field-row">
-            <label>Seu nome<input name="nome" required placeholder="Como podemos te chamar?"></label>
-            <label>E-mail ou Instagram<input name="contato" required placeholder="@seuperfil ou email"></label>
-          </div>
-          <label>Qual serviço você procura?
-            <select name="servico" required>
-              <option value="">Selecione um serviço</option>
-              <option>Desenvolvimento de sites</option><option>Edição de fotos</option><option>Identidade visual</option><option>Artes para redes sociais</option><option>Mais de um serviço</option><option>Outro / ainda não sei</option>
-            </select>
-          </label>
-          <label>Conte sobre seu projeto<textarea name="mensagem" required placeholder="O que você tem em mente?"></textarea></label>
-          <button class="btn primary" type="submit">Preparar mensagem ↗</button>
-          <p class="form-note">Sua solicitação será enviada para o e-mail da KERVØ Studio.</p>
-          <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
-          <input type="hidden" name="_subject" value="Novo pedido de orçamento — KERVØ Studio">
-          <input type="hidden" name="_template" value="table">
+        <div class="contact-copy reveal"><div class="eyebrow">05 / Vamos conversar?</div><h2>Seu próximo<br>projeto começa<br><span class="gold">aqui.</span></h2><p>Conte sobre sua ideia. Vamos entender o que você precisa e conversar sobre os próximos passos.</p><div class="contact-detail"><span class="gold">✉</span><span><b>E-mail</b><br>studiokervo@gmail.com</span></div><div class="contact-detail"><span class="gold">◎</span><span><b>Atendimento</b><br>Projetos sob consulta</span></div></div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="field-row"><div class="field"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" required placeholder="Como podemos te chamar?"></div><div class="field"><label for="contatoCliente">E-mail ou Instagram</label><input id="contatoCliente" name="contato" required placeholder="Seu contato"></div></div>
+          <div class="field"><label for="servico">Serviço de interesse</label><select id="servico" name="servico" required><option value="">Selecione uma opção</option><option>Desenvolvimento de sites</option><option>Edição de fotos</option><option>Identidade visual</option><option>Artes para redes sociais</option><option>Mais de um serviço</option><option>Outro / ainda não sei</option></select></div>
+          <div class="field"><label for="mensagem">Sua mensagem</label><textarea id="mensagem" name="mensagem" required placeholder="Conte um pouco sobre o que você tem em mente..."></textarea></div>
+          <input type="hidden" name="_subject" value="Novo pedido de orçamento — KERVØ Studio"><input type="hidden" name="_template" value="table">
+          <div class="form-bottom"><button class="btn primary" type="submit">Enviar mensagem <span>↗</span></button><p class="form-note">Retornaremos assim que possível.</p></div><p id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <a href="#inicio" class="footer-logo">KERVØ STUDIO</a>
-      <span>© <span id="year"></span> KERVØ Studio · Sua visão. Sua identidade.</span>
-      <div class="socials"><a href="#contato" aria-label="Contato">✉</a><a href="#inicio" aria-label="Voltar ao início">↑</a></div>
-    </div>
-  </footer>
+  <footer><div class="wrap"><div class="footer-inner"><a class="logo" href="#inicio">KERVØ<span>STUDIO</span></a><div class="footer-center">Sua visão. Sua identidade. Sua assinatura.</div><div class="socials"><a href="mailto:studiokervo@gmail.com" aria-label="Enviar e-mail">✉</a><a href="#portfolio" aria-label="Portfólio">Be</a><a href="#inicio" aria-label="Voltar ao início">↑</a></div></div><div class="copyright"><span>© <span id="year"></span> KERVØ Studio. Todos os direitos reservados.</span><span>Design com intenção. Digital com personalidade.</span></div></div></footer>
   <script>
     const menuBtn=document.getElementById('menuBtn');
     const navlinks=document.getElementById('navlinks');
-    menuBtn.addEventListener('click',()=>navlinks.classList.toggle('open'));
-    navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+    menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');document.body.classList.toggle('menu-open',open);});
+    navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Abrir menu');document.body.classList.remove('menu-open');}));
     document.getElementById('year').textContent=new Date().getFullYear();
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const form = this;
-      const status = document.getElementById('formStatus');
-      const button = form.querySelector('button[type="submit"]');
-      const originalButtonText = button.textContent;
-
-      status.textContent = 'Enviando sua solicitação...';
-      button.disabled = true;
-      button.textContent = 'Enviando...';
-
-      try {
-        const response = await fetch('https://formsubmit.co/ajax/studiokervo@gmail.com', {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        const result = await response.json();
-
-        if (!response.ok || result.success !== 'true' && result.success !== true) {
-          throw new Error(result.message || 'Não foi possível enviar agora.');
-        }
-
-        status.textContent = 'Mensagem enviada! A KERVØ Studio recebeu sua solicitação.';
-        form.reset();
-      } catch (error) {
-        status.textContent = 'Não foi possível enviar. Tente novamente em alguns minutos ou entre em contato por e-mail.';
-        console.error('Erro ao enviar formulário:', error);
-      } finally {
-        button.disabled = false;
-        button.textContent = originalButtonText;
-      }
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    document.getElementById('contactForm').addEventListener('submit',async function(e){
+      e.preventDefault();const form=this,status=document.getElementById('formStatus'),button=form.querySelector('button[type="submit"]'),original=button.innerHTML;
+      status.textContent='Enviando sua mensagem...';button.disabled=true;button.textContent='Enviando...';
+      try{const response=await fetch('https://formsubmit.co/ajax/studiokervo@gmail.com',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});const result=await response.json();if(!response.ok||!(result.success===true||result.success==='true'))throw new Error(result.message||'Falha no envio');status.textContent='Mensagem enviada! Obrigado por entrar em contato.';form.reset();}
+      catch(error){status.textContent='Não foi possível enviar agora. Envie um e-mail para studiokervo@gmail.com.';}
+      finally{button.disabled=false;button.innerHTML=original;}
     });
   </script>
 </body>
